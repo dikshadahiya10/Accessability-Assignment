@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to my website</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="table.html">Table</a></li>
+                <li><a href="accordion.html">Accordion</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form>
+            <label for="firstname">First Name *</label>
+            <input type="text" id="firstname" name="firstname" required>
+            <label for="lastname">Last Name *</label>
+            <input type="text" id="lastname" name="lastname" required>
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+            <label for="birthyear">Birth Year</label>
+            <select id="birthyear" name="birthyear">
+                <option value="">- Select -</option>
+                <option value="1990">1990</option>
+                <option value="1991">1991</option>
+                <option value="1992">1992</option>
+                <option value="1993">1993</option>
+                <option value="1994">1994</option>
+            </select>
+            <label for="gender">Gender</label>
+            <div>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+            </div>
+            <div>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+            </div>
+            <label>Interests</label>
+            <div>
+                <input type="checkbox" id="interest1" name="interest1">
+                <label for="interest1">Interest 1</label>
+            </div>
+            <div>
+                <input type="checkbox" id="interest2" name="interest2">
+                <label for="interest2">Interest 2</label>
+            </div>
+            <button type="reset">Reset</button>
+            <button type="submit" disabled>Submit</button>
+        </form>
+    </main>
+    <footer>
+        <p>By Diksha &copy; 2023</p>
+        <nav>
+            <ul>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </nav>
+    </footer>
+    <script>
+        // Disable submit button until form is complete
+        const form = document.querySelector('form');
+        const submitBtn = form.querySelector('button[type="submit"]');
+        form.addEventListener('input', () => {
+            if (form.checkValidity()) {
+                submitBtn.disabled = false;
+            } else {
+                submitBtn.disabled = true;
+            }
+        });
+    </script>
+</body>
+</html>
